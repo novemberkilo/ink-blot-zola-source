@@ -8,8 +8,8 @@ title="About"
 
   I help build software systems. I prefer the functional style of programming and am partial to
   working with a statically typed language, with property-based testing. I have written production software
-  in Haskell, Clojure, Rust, Python, Ruby and Javascript. For the last few years I've worked mainly on the
-  border between data scientists and programmers and prior to that I was a Rails web developer.
+  in Haskell, Clojure, Rust, Python, Ruby and Javascript. For the last few years I've worked mainly on teams
+  with data scientists and programmers and prior to that, I mostly worked with Rails projects.
 
   I studied Computer Science when Z-80s and 6502s were the microprocessors
   of the day and the university lab splurged on a bunch of [NeXT
@@ -31,9 +31,6 @@ title="About"
 
   ### The Site
 
-  I write here. Topics include information and opinion relevant to my
-  adventures.
-
   This site is hosted on [GitHub](http://github.com) using their
   [Pages](http://github.com/blog/272-github-pages) feature.
 
@@ -49,3 +46,6 @@ title="About"
   ### Contact
 
   Feel free to get in touch. My email address is navin at novemberkilo.com
+
+  I don't have comments enabled on this site so if you'd like to point out an error, or suggest
+  an improvement, please use email.

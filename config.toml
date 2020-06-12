@@ -13,7 +13,7 @@ highlight_code = true
 
 # Which theme to use for the code highlighting.
 # See below for list of accepted values
-highlight_theme = "agola-dark"
+highlight_theme = "gruvbox-dark"
 
 # Whether to generate a RSS feed automatically
 generate_rss = true
@@ -31,7 +31,7 @@ generate_rss = true
 #     ]
 #
 taxonomies = [
-           {name = "tags", rss = true}
+    {name = "tags", rss = true}
 ]
 
 # The additional languages for that site
@@ -47,7 +47,7 @@ languages = []
 compile_sass = true
 
 [extra]
-home_subtitle = "Some profound and catchy statement"
+home_subtitle = ""
 
 footer_copyright = ' &#183; <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>'
 

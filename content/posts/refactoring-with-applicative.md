@@ -1,5 +1,5 @@
 +++
-title="Refactoring with Applicative - a small example in Haskell."
+title="Refactoring with Applicative - a small example in Haskell"
 date=2018-05-27
 draft=false
 [taxonomies]
