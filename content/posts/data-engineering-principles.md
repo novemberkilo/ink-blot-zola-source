@@ -21,10 +21,10 @@ patch the system to cope with these point problems - a whack-a-mole approach if 
 
 Here are some examples of poor data quality in a data feed that should be expected
 and accepted:
-  - date-formats that change over time
-  - schemas that change - columns disappear or appear
-  - file formats change (dos, unix)
-  - the size/amount varies suddenly (possibly indicating errors upstream to the system)
+  - Date-formats that change over time
+  - Schemas that change - columns disappear or appear
+  - File formats change (dos, unix)
+  - The size/amount varies suddenly (possibly indicating errors upstream to the system)
 
 The remainder of the principles are mostly in response to this fundamental principle.
 
@@ -65,9 +65,9 @@ principle follows on quite naturally from this.
 
 At every step in the pipeline, source data should always be available exactly as it was first encountered.
 This will address:
-  - concerns around processing corrupt or otherwise mangled data
-  - easier and faster debugging or troubleshooting
-  - the ability to re-run any component or stage of the pipeline in isolation
+  - Concerns around processing corrupt or otherwise mangled data
+  - Easier and faster debugging or troubleshooting
+  - The ability to re-run any component or stage of the pipeline in isolation
 
 This will mean storing multiple copies of data but the copies should have different contexts (typically
 corresponding to the stages of the pipeline).
