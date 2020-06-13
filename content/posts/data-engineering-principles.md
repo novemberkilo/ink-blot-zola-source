@@ -11,12 +11,12 @@ Nick Hibberd, and I am very grateful to them.
 
 Perhaps the fundamental principle is this first one.
 
-#### Expect data to be poor quality
+### Expect data to be poor quality
 
 Expect data to be poorly formed, to have errors, and work defensively to detect and correct this.
 Failure to adopt this principle is indicated by sporadic failures in data pipelines with diagnoses
-that point to unexpected data. These are usually accompanied by complaints, fingers pointed at 
-the source of the data, and judgement passed. The code base ends up with churny fixes that 
+that point to unexpected data. These are usually accompanied by complaints, fingers pointed at
+the source of the data, and judgement passed. The code base ends up with churny fixes that
 patch the system to cope with these point problems - a whack-a-mole approach if you will.
 
 Here are some examples of poor data quality in a data feed that should be expected
@@ -28,7 +28,7 @@ and accepted:
 
 The remainder of the principles are mostly in response to this fundamental principle.
 
-#### Measure the characteristics of the data
+### Measure the characteristics of the data
 
 If we expect the data to be poor quality, it behooves us to gather information about data so that
 we know what is being ingested and whether it should be processed. Here are some characteristics
@@ -46,7 +46,7 @@ a stage of the pipeline that has operational responsibility - it typically occur
 ingestion/extraction and compares incoming data with measurements from similar events. It raises
 alerts and/or stops the pipeline from processing data that is deemed suspect.
 
-#### Normalise and enrich the data
+### Normalise and enrich the data
 
 Have a transformation step to normalize the data to formats and schemas the pipeline can expect. The
 sorts of normalising transformations that fit this step include:
@@ -54,14 +54,14 @@ sorts of normalising transformations that fit this step include:
   - Transforming different date and time formats
   - Standardising separators, padding etc. (this also allows for detection of mangled quoting in CSVs for example)
 
-#### Maintain provenance information
+### Maintain provenance information
 
 Information pertaining to the provenance of data in the system enables the ability to trace
 or backtrack through transformations. It helps with diagnosing issues but also with definitively being able
 to answer questions about when and from where, data entered any stage of the pipeline. The next
 principle follows on quite naturally from this.
 
-#### Keep the data immutable
+### Keep the data immutable
 
 At every step in the pipeline, source data should always be available exactly as it was first encountered.
 This will address:
@@ -72,7 +72,7 @@ This will address:
 This will mean storing multiple copies of data but the copies should have different contexts (typically
 corresponding to the stages of the pipeline).
 
-#### Monitor information loss
+### Monitor information loss
 
 As data traverses the pipeline it can lose information. This should not be accidental.
 Consciously allow this to happen, or not.
