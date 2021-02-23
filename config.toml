@@ -57,7 +57,8 @@ hermit_menu = [
 ]
 
 hermit_social = [
-    { name = "twitter", link = "https://twitter.com/novemberkilo" },
+    # { name = "twitter", link = "https://twitter.com/novemberkilo" },
+    { name = "linkedin", link = "https://www.linkedin.com/in/novemberkilo" },
     { name = "github", link = "https://github.com/novemberkilo" },
     # { name = "email", link = "mailto: navin@novemberkilo.com" }
 ]
