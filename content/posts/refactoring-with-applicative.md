@@ -24,12 +24,11 @@ simply not calculating a volume if any of the dimensions of the box are missing.
     3,4,                -
     1,2,4               8
 
-
 ### Maybe volume
 
 We'll work towards a function to calculate volume - something with a signature like this:
 
-```haskell
+```hs
 maybeVolume :: Maybe Length -> Maybe Breadth -> Maybe Height -> Maybe Volume
 ```
 
@@ -38,19 +37,19 @@ Let's work with Area before we get to Volume.
 
 A great place to start is with some data types.
 
-```haskell
+```hs
 newtype Length =
   Length {
     getLength :: Int
   } deriving (Eq, Show)
 ```
-```haskell
+```hs
 newtype Width =
   Width {
     getWidth :: Int
   } deriving (Eq, Show)
 ```
-```haskell
+```hs
 newtype Area =
   Area {
     getArea :: Int
@@ -59,7 +58,7 @@ newtype Area =
 
 So with these types our pure function for `area` is:
 
-```haskell
+```hs
 area :: Length -> Width -> Area
 area l w =
   Area $ (getLength l) * (getWidth w)
@@ -70,7 +69,7 @@ a function that handles missing values. [`Maybe`](https://wiki.haskell.org/Maybe
 encodes the concept that a value may be missing. Following a simple pattern
 matching approach gets us:
 
-```haskell
+```hs
 marea :: Maybe Length -> Maybe Width -> Maybe Area
 marea ml mw =
   case ml of
@@ -90,7 +89,7 @@ Let's use the fact that `Maybe` is a monad. The bind operation passes through Ju
 while Nothing will force the result to always be Nothing. Using `do` notation we
 can rewrite `marea` like so:
 
-```haskell
+```hs
 marea' :: Maybe Length -> Maybe Width -> Maybe Area
 marea' ml mw = do
   l <- ml
@@ -102,7 +101,7 @@ The shape of `marea'` is exactly the motivating example for introducing applicat
 McBride and Patterson's, [Applicative Programming with Effects](https://www.staff.city.ac.uk/~ross/papers/Applicative.html).
 Using applicative notation gets us to a one-liner.
 
-```haskell
+```hs
 marea'' :: Maybe Length -> Maybe Width -> Maybe Area
 marea'' ml mw =
   area <$> ml <*> mw
@@ -111,13 +110,13 @@ marea'' ml mw =
 Armed with these examples, let us return to `maybeVolume.` We will need a couple
 of extra data types.
 
-```haskell
+```hs
 newtype Breadth =
   Breadth {
     getBreadth :: Int
   } deriving (Eq, Show)
 ```
-```haskell
+```hs
 newtype Volume =
   Volume {
     getVolume :: Int
@@ -125,7 +124,7 @@ newtype Volume =
 ```
 
 And then our pure function for `volume` is simply:
-```haskell
+```hs
 volume :: Length -> Width -> Breadth -> Volume
 volume l w b =
   Volume $ (getLength l) * (getWidth w) * (getBreadth b)
@@ -134,7 +133,7 @@ volume l w b =
 Skipping over the simplest version of the function (that uses pattern matching),
 here are the monadic and applicative versions of `maybeVolume`
 
-```haskell
+```hs
 -- monadic approach
 mvolume :: Maybe Length -> Maybe Width -> Maybe Breadth -> Maybe Volume
 mvolume ml mw mb = do
